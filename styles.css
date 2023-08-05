@@ -1,13 +1,15 @@
 /* General selectors */
 :root {
-/*     --primary-color:  */
+    --primary-color: #265f6e;
     --light-grey: rgb(249,249,249);
+    --monsterrat-font: monsterrat;
 }
 
 html,
 body {
     width: 100%;
     height: 100%;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 body {
@@ -19,9 +21,24 @@ a {
     color: white;
 }
 
+em {
+    font-style: italic;
+}
+
+/* Fonts */
 @font-face {
     font-family: norse-bold;
     src: url(fonts/Norse-Bold.otf);
+}
+
+@font-face {
+    font-family: monsterrat;
+    src: url(fonts/monsterrat/static/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: monsterrat-bold;
+    src: url(fonts/monsterrat/static/Montserrat-SemiBold.ttf);
 }
 
 /* Left banner */
@@ -68,23 +85,97 @@ a {
 }
 
 .signup-section h3 {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     padding: 60px 40px;
     font-weight: 500;
 }
 
-fieldset {
+.white-container {
     background-color: white;
     height: 250px;
-    padding: 20px 40px;
+    padding: 0 40px;
+    padding-top: 20px;
 
-    box-shadow: 0 10px 22px -25px black;
+    box-shadow: 0 7px 7px rgb(0, 0, 0, 0.15);
 }
 
-fieldset input {
-    background-color: var(--light-grey);
-    opacity: 0.2;
+.white-container h2 {
+    font-size: 1.4rem;
+    font-family: monsterrat-bold;
+}
+
+fieldset {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 40%;
+}
+
+.row {
+    display: flex;
+    gap: 90px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 1.05rem;
+}
+
+
+.input-container input[type] {
+    background-color: rgba(249,249,249, 0.2);
     border-radius: 5px;
     box-shadow: 0;
-    border: 1px solid black;
+    border: 2px solid rgb(0, 0, 0, 0.2);
+    height: 25px;
+    width: 250px;
+    color: black;
+    font-size: 1rem;
+    padding-left: 5px;
+}
+
+.input-container input:focus {
+    outline: none;
+    border: 2px solid rgba(0, 0, 255, 0.5);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="password"].error {
+    border: 2px solid rgb(141, 2, 2);
+}
+
+.input-container label {
+    text-transform: uppercase;
+    font-family: var(--monsterrat-font);
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.17ch;
+}
+
+form button {
+    margin: 30px 30px;
+    width: 200px;
+    font-weight: 700;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 20px;
+    font-size: 1.1rem;
+    border-radius: 7px;
+    border: 0;
+}
+
+main p {
+    margin: 5px 30px;
+    font-size: 1.07rem;
+}
+
+main p a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
 }
